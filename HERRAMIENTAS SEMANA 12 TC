@@ -49,24 +49,4 @@ fun sumaCuandoLosNumerosSonNegativosTest(): Boolean {
     }
 }
 
-fun validarEdad(edad: Int): String {
-    return if (edad < 0) {
-        "REJECTED"
-    } else if (edad >= 18) {
-        "ACCEPTED"
-    } else {
-        "REJECTED"
-    }
-}
 
-fun validarEdadTest(): Boolean {
-    val actualValue = validarEdad(20)
-    val expectedValue = "ACCEPTED"
-    return actualValue == expectedValue
-}
-
-fun validarEdadNegativaTest(): Boolean {
-    val actualValue = validarEdad(-5)
-    val expectedValue = "REJECTED"
-    return actualValue == expectedValue
-}
