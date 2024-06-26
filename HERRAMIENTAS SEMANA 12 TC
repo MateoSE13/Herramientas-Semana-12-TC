@@ -1,0 +1,46 @@
+fun main() {
+    println("TDD")
+    if (sumaParesTest() && sumaImparPrimeroTest() && sumaImparSegundoTest() && sumaCuandoLosNumerosSonNegativosTest()) {
+        println("Passed")
+    } else {
+        println("Failed")
+    }
+}
+
+fun sumaPares(a: Int, b: Int): Int {
+    // Paso . Hacer que la prueba pase 
+    return a + b
+}
+
+// Paso 1. Escribir prueba que falle 
+fun sumaParesTest(): Boolean {
+    val actualValue = sumaPares(2, 2)
+    val expectedValue = 4
+    return actualValue == expectedValue
+}
+
+fun sumaImpares(a: Int, b: Int): Int {
+    // Implementar la lógica para sumar solo números impares
+    return if (a % 2 != 0 && b % 2 != 0) {
+        a + b
+    } else {
+        0 
+    }
+}
+
+fun sumaImparPrimeroTest(): Boolean {
+    val actualValue = sumaImpares(3, 5) // ambos impares
+    val expectedValue = 8
+    return actualValue == expectedValue
+}
+
+fun sumaImparSegundoTest(): Boolean {
+    val actualValue = sumaImpares(2, 3) // uno impar y otro par
+    val expectedValue = 0 // ya que uno no es impar
+    return actualValue == expectedValue
+}
+
+fun sumaCuandoLosNumerosSonNegativosTest(): Boolean {
+    val resp = sumaPares(-2, 4)
+    return resp >= 0
+}
